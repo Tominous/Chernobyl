@@ -1,0 +1,8 @@
+name: Chernobyl
+version: ${project.version}
+main: me.rtn.ch.Main
+prefix: Chernobyl
+load: STARTUP
+authors: [RapidTheNerd]
+description: Basic testing grounds 
+website: https://rapidthenerd.me
