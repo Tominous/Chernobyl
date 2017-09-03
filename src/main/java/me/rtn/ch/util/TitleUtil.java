@@ -46,6 +46,21 @@ public class TitleUtil {
                     chatComponent = SI.MINECRAFT.getClass("IChatBaseComponent"),
                     serializer = SI.MINECRAFT.getClass("IChatBaseComponent$ChatSerializer"),
                     action = SI.MINECRAFT.getClass("PacketPlayOutTitle$EnumTitleAction");
+
+            Object timesPacket = playPacket.getConstructor(int.class, int.class, int.class).newInstance(fadeIn, stay, fadeOut);
+            connection.getClass().getMethod("sendPacket").invoke(connection, timesPacket);
+
+            if(title != null && !title.isEmpty()){
+                Object titleCompp = serializer.getMethod("a", String.class).invoke(null, title),
+                        titlePacket = playPacket.getConstructor(action, chatComponent).newInstance(action.getField("TITLE").get(null), titleCompp);
+                connection.getClass().getMethod("sendPacket", genericPacket).invoke(connection, titlePacket);
+            }
+
+            if(subtitle != null && !subtitle.isEmpty()){
+                Object subComp = serializer.getMethod("a", String.class).invoke(null, subtitle),
+                        subPacket = playPacket.getConstructor(action, chatComponent).newInstance(action.getField("SUBTITLE").get(null), subComp);
+                connection.getClass().getMethod("sendPacket", genericPacket).invoke(connection, subPacket);
+            }
         } catch (Exception e) {
             e.printStackTrace();
         }
