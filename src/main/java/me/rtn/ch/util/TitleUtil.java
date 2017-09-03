@@ -1,6 +1,7 @@
 package me.rtn.ch.util;
 
 import com.google.common.base.Preconditions;
+import me.rtn.ch.Main;
 import org.bukkit.entity.Player;
 
 
@@ -63,6 +64,11 @@ public class TitleUtil {
             }
         } catch (Exception e) {
             e.printStackTrace();
+        }
+    }
+    public void sendToAll(){
+        for(Player player : Main.getInstance().getServer().getOnlinePlayers()){
+            send(player);
         }
     }
 }
