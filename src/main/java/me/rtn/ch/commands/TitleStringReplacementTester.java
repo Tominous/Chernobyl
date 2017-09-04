@@ -1,8 +1,11 @@
 package me.rtn.ch.commands;
 
+import me.rtn.ch.util.TitleUtil;
+import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
+import org.bukkit.entity.Player;
 
 /*
  * mc 
@@ -25,6 +28,9 @@ import org.bukkit.command.CommandSender;
 public class TitleStringReplacementTester implements CommandExecutor {
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
+        Player player = (Player) sender;
+        new TitleUtil(ChatColor.GREEN + "Testing {PLAYER} HELLO!","", 0, 20, 10).send(player);
+
         return true;
     }
 }

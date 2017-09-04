@@ -71,4 +71,24 @@ public class TitleUtil {
             send(player);
         }
     }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public String getSubtitle() {
+        return subtitle;
+    }
+
+    public int getFadeIn() {
+        return fadeIn;
+    }
+
+    public int getStay() {
+        return stay;
+    }
+
+    public int getFadeOut() {
+        return fadeOut;
+    }
 }
