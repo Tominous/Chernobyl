@@ -62,10 +62,22 @@ public class TitleUtil {
                         subPacket = playPacket.getConstructor(action, chatComponent).newInstance(action.getField("SUBTITLE").get(null), subComp);
                 connection.getClass().getMethod("sendPacket", genericPacket).invoke(connection, subPacket);
             }
+
+            assert title != null;
+            if(title.contains("{PLAYER}")){
+                title.replace("{PLAYER}", player.getName());
+            }
+
+            assert subtitle != null;
+            if(subtitle.contains("{PLAYER}")){
+                subtitle.replace("{PLAYER}", player.getName());
+            }
+
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
+
     public void sendToAll(){
         for(Player player : Main.getInstance().getServer().getOnlinePlayers()){
             send(player);
