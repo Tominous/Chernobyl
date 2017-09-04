@@ -6,3 +6,6 @@ load: STARTUP
 authors: [RapidTheNerd]
 description: Basic testing grounds 
 website: https://rapidthenerd.me
+commands:
+  trt:
+    description: runs this shit

@@ -1,5 +1,6 @@
 package me.rtn.ch;
 
+import me.rtn.ch.commands.TitleStringReplacementTester;
 import me.rtn.ch.events.PlayerJoin;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -20,6 +21,8 @@ public final class Main extends JavaPlugin {
         Stream.of(
                 new PlayerJoin()
         ).forEach(listener -> getServer().getPluginManager().registerEvents(listener, this));
+
+        getCommand("trt").setExecutor(new TitleStringReplacementTester());
     }
 
     @Override
