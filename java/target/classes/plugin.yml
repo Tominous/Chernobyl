@@ -1,0 +1,11 @@
+name: Chernobyl
+version: 1.0-SNAPSHOT
+main: me.rtn.ch.Main
+prefix: Chernobyl
+load: STARTUP
+authors: [RapidTheNerd]
+description: Basic testing grounds 
+website: https://rapidthenerd.me
+commands:
+  trt:
+    description: runs this shit
