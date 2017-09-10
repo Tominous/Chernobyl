@@ -1,0 +1,9 @@
+To avoid confusion the files that are not a class or similar are GLSL files, they're used to help load textures,
+lighting and other stuff. IntelliJ does not support code to be written in the GLSL format, so its being read out
+of a text document and programmed within that text document. Yes not the most efficient way of doing it but it works for
+the overall outcome of what we need them to do.
+
+If you want to add your own shaders, textures or lighting, I don't suggest copying it and replacing
+it with your own values, as for different values it will require different methods, and if I'm correct as GLSL gets updated
+the way they are written in code is changed as well. If you want to learn about GLSL visit this site
+https://www.opengl.org/sdk/docs/tutorials/TyphoonLabs/Chapter_1.pdf

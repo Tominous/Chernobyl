@@ -1,0 +1,9 @@
+bin
+seq-bin
+eclipse_bin
+spooned
+compiler/*
+logs
+dist
+lib/Aeminium*.jar
+benchmark.data
